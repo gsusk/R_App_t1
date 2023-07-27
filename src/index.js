@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import QuoteBox from './appcode';
 import "./index.css"
 
+
+
 function MyApp() {
     return (
             <QuoteBox/>

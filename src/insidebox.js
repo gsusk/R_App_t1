@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTumblrSquare, faTwitterSquare } from "@fortawesome/free-brands-svg-icons";
 
 
 export default function Quotes({apiData, apiNewRequest}) {
@@ -15,11 +17,15 @@ export default function Quotes({apiData, apiNewRequest}) {
 
 
 
-function Socials() {
+function Socials({apiData}) {
     return (
         <div id="socials">
-            <button><a id='tweet-quote'>socials ph</a></button>
-            <button><a id='tmblr-quote'>socials ph</a></button>
+            <a class='twitter-share-button' href={`https://twitter.com/intent/tweet?text=${apiData.quote}`} id='tweet-quote' target='_blank'>
+                <FontAwesomeIcon icon={faTwitterSquare} size="3x" className="my-icon"/>
+            </a>
+            <a href='#' id='tmblr-quote'>
+                <FontAwesomeIcon icon={faTumblrSquare} size="3x" className="my-icon"/>
+            </a>
         </div>
     )
 }
@@ -27,7 +33,7 @@ function Socials() {
 
 function Credits() {
     return (
-        <p id='credits'>made by <a>ph</a></p>
+        <p id='credits'>made by <a href='#' id='by-anchor'>gsusk</a></p>
     )
 }
 

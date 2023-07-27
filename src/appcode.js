@@ -3,6 +3,7 @@ import Quotes from "./insidebox";
 import { Socials, Credits } from "./insidebox";
 
 
+
 function getRandomColor() {
     const letters = "0123456789ABCDEF";
     let color = "#";
@@ -20,10 +21,10 @@ export default function QuoteBox() {
         fetch("https://api.api-ninjas.com/v1/quotes?limit=1?category=happiness", 
         {headers: {'X-Api-Key':"b2ItxEWBtVykTt7rZUIZZr5q0wrEKgnUsympPevH"}})
             .then((response) => response.json())
-            .then((data) => setData(data[0]))
+            .then((data) => setData(data[0]),
+            setColor(getRandomColor()),
+            document.documentElement.style.setProperty('--background-col1', color))
             .catch((error) => console.error("Error fetching quote:", error));
-            setColor(getRandomColor())
-            document.documentElement.style.setProperty('--background-col1', color)
     }
 
     useEffect(() => {
@@ -33,8 +34,8 @@ export default function QuoteBox() {
     return (
         <>
         <div id="quote-box">
-            <Quotes bcolor={color} apiData={data} apiNewRequest={apiGet}/>
-            <Socials bcolor={color}/>
+            <Quotes apiData={data} apiNewRequest={apiGet}/>
+            <Socials apiData={data}/>
         </div>
         <div id="footer">
             <Credits/>
