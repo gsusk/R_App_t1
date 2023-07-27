@@ -23,7 +23,7 @@ function Socials({apiData}) {
             <a class='twitter-share-button' href={`https://twitter.com/intent/tweet?text=${apiData.quote}`} id='tweet-quote' target='_blank'>
                 <FontAwesomeIcon icon={faTwitterSquare} size="3x" className="my-icon"/>
             </a>
-            <a href='#' id='tmblr-quote'>
+            <a href='#root' id='tmblr-quote'>
                 <FontAwesomeIcon icon={faTumblrSquare} size="3x" className="my-icon"/>
             </a>
         </div>
@@ -33,7 +33,7 @@ function Socials({apiData}) {
 
 function Credits() {
     return (
-        <p id='credits'>made by <a href='#' id='by-anchor'>gsusk</a></p>
+        <p id='credits'>made by <a href='#root' id='by-anchor'>gsusk</a></p>
     )
 }
 
